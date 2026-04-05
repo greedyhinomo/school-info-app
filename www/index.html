@@ -35,5 +35,28 @@
     </div>
 
     <script src="app.js"></script>
+    <!-- Search Section -->
+    <div class="search-section">
+    <!-- Main Search Box -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Search by school name...">
+    </div>
+
+    <!-- Additional Filter Text Boxes -->
+    <div class="filter-row">
+        <input type="text" id="districtFilter" placeholder="📍 Filter by district (e.g., Kowloon City)">
+        <input type="text" id="typeFilter" placeholder="🏫 Filter by type (e.g., Secondary)">
+    </div>
+
+    <!-- Filter Buttons (keep existing) -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Schools</button>
+        <button class="filter-btn" data-filter="Kindergarten">Kindergarten</button>
+        <button class="filter-btn" data-filter="Primary">Primary</button>
+        <button class="filter-btn" data-filter="Secondary">Secondary</button>
+        <button class="filter-btn" data-filter="University">University</button>
+    </div>
+</div>
 </body>
 </html>
+
