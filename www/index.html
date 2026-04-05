@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
     <title>Hong Kong School Information</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <div class="header">
-        <h1>Hong Kong Schools</h1>
+        <h1>🏫 Hong Kong Schools</h1>
         <p>Find information about schools in Hong Kong</p>
     </div>
 
-    <!-- Search Bar -->
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="🔍 Search by school name or district..." onkeyup="filterSchools()">
-        <button id="langBtn" onclick="toggleLanguage()">🌐 中文</button>
+    <!-- Search Section with ALL filters -->
+    <div class="search-section">
+        <!-- Main Search Box -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search by school name...">
+        </div>
+
+        <!-- Additional Filter Text Boxes -->
+        <div class="filter-row">
+            <input type="text" id="districtFilter" placeholder="📍 Filter by district (e.g., Kowloon City)">
+            <input type="text" id="typeFilter" placeholder="🏫 Filter by type (e.g., Secondary)">
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Schools</button>
+            <button class="filter-btn" data-filter="Kindergarten">Kindergarten</button>
+            <button class="filter-btn" data-filter="Primary">Primary</button>
+            <button class="filter-btn" data-filter="Secondary">Secondary</button>
+            <button class="filter-btn" data-filter="University">University</button>
+        </div>
     </div>
 
     <!-- Stats -->
     <div class="stats" id="stats">
-        Loading schools...
+        <span id="totalSchools">0</span> schools loaded
     </div>
 
     <!-- School List -->
@@ -31,32 +49,36 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>Data from Hong Kong Education Bureau | Total schools: <span id="totalCount">0</span></p>
+        <p>Data from Hong Kong Education Bureau | COMP 3130SEF Mobile App Project</p>
     </div>
 
-    <script src="app.js"></script>
-    <!-- Search Section -->
-    <div class="search-section">
-    <!-- Main Search Box -->
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 Search by school name...">
+    <!-- Modal for School Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" id="modalTitle"></div>
+            <div class="modal-info">
+                <div class="modal-label">Address</div>
+                <div class="modal-value" id="modalAddress"></div>
+            </div>
+            <div class="modal-info">
+                <div class="modal-label">District</div>
+                <div class="modal-value" id="modalDistrict"></div>
+            </div>
+            <div class="modal-info">
+                <div class="modal-label">Type</div>
+                <div class="modal-value" id="modalType"></div>
+            </div>
+            <div class="modal-info">
+                <div class="modal-label">Session</div>
+                <div class="modal-value" id="modalSession"></div>
+            </div>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
     </div>
 
-    <!-- Additional Filter Text Boxes -->
-    <div class="filter-row">
-        <input type="text" id="districtFilter" placeholder="📍 Filter by district (e.g., Kowloon City)">
-        <input type="text" id="typeFilter" placeholder="🏫 Filter by type (e.g., Secondary)">
-    </div>
-
-    <!-- Filter Buttons (keep existing) -->
-    <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All Schools</button>
-        <button class="filter-btn" data-filter="Kindergarten">Kindergarten</button>
-        <button class="filter-btn" data-filter="Primary">Primary</button>
-        <button class="filter-btn" data-filter="Secondary">Secondary</button>
-        <button class="filter-btn" data-filter="University">University</button>
-    </div>
-</div>
+    <!-- Scripts -->
+    <script src="cordova.js"></script>
+    <script src="add.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
-
