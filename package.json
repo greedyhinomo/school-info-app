@@ -1,11 +1,1 @@
-{
-  "name": "school-info-app",
-  "version": "1.0.0",
-  "description": "Hong Kong School Information App",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Greedyhinomo",
-  "license": "MIT"
-}
+{"name":"school-info-app","dependencies":{"cordova":"^13.0.0","cordova-android":"^13.0.0"}}
