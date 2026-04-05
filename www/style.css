@@ -217,3 +217,33 @@ body {
     text-decoration: none;
     word-break: break-all;
 }
+/* Filter Row - Two text boxes side by side */
+.filter-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-row input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    transition: all 0.3s;
+    background: #f9f9f9;
+}
+
+.filter-row input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background: white;
+    box-shadow: 0 0 8px rgba(76,175,80,0.3);
+}
+
+/* Optional: Add placeholder styling */
+.filter-row input::placeholder {
+    color: #999;
+    font-size: 13px;
+}
