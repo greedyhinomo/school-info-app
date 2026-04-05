@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -32,19 +32,19 @@ jobs:
       
       - name: Create Cordova Project
         run: |
-          cordova create app hk.edu.hkmu.schoolinfo "School Info App"
-          cp -r www/* app/www/
-          cp config.xml app/
-          cd app
+          cordova create temp-app hk.edu.hkmu.schoolinfo "School Info App"
+          cp -r www/* temp-app/www/
+          cp config.xml temp-app/
+          cd temp-app
           cordova platform add android
       
       - name: Build APK
         run: |
-          cd app
+          cd temp-app
           cordova build android
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: school-info-app
-          path: app/platforms/android/app/build/outputs/apk/debug/*.apk
+          path: temp-app/platforms/android/app/build/outputs/apk/debug/*.apk
