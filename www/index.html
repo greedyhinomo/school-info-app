@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Hong Kong School Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Hong Kong Schools</h1>
+        <p>Find information about schools in Hong Kong</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Search by school name or district..." onkeyup="filterSchools()">
+        <button id="langBtn" onclick="toggleLanguage()">🌐 中文</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats" id="stats">
+        Loading schools...
+    </div>
+
+    <!-- School List -->
+    <div class="school-list" id="schoolList">
+        <div class="loading">Loading school data...</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Data from Hong Kong Education Bureau | Total schools: <span id="totalCount">0</span></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
