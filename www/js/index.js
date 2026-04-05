@@ -23,7 +23,7 @@ function loadLocalData() {
     showLoading(true);
     
     // Path is relative to your index.html file
-    fetch('data.json')
+    fetch('School data.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('HTTP error ' + response.status);
