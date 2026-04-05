@@ -1,0 +1,9 @@
+# Cordova
+.cordova/
+platforms/
+plugins/
+temp-app/
+node_modules/
+.DS_Store
+dist/
+build/
