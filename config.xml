@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<preference name="android-minSdkVersion" value="24" />
-<preference name="android-targetSdkVersion" value="34" />
-<preference name="GradleVersion" value="8.1.0" />
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="hk.edu.hkmu.schoolinfo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>School Info App</name>
+    <description>Hong Kong School Information Application</description>
+    <author email="student@hkmu.edu.hk" href="https://www.hkmu.edu.hk">
+        HKMU Student
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="33" />
+    </platform>
+    <access origin="*" />
+    <preference name="Orientation" value="portrait" />
+</widget>
