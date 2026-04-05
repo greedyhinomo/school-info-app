@@ -23,7 +23,7 @@ function loadLocalData() {
     showLoading(true);
     
     // Path is relative to your index.html file
-    fetch('School data.json')   // ← Updated filename
+    fetch('School_data.json')   // ← Updated filename
         .then(response => {
             if (!response.ok) {
                 throw new Error('HTTP error ' + response.status);
@@ -44,7 +44,7 @@ function loadLocalData() {
             updateStats();
             filterAndRenderSchools();
             showLoading(false);
-            showError("Using demo data (School data.json not found)");
+            showError("Using demo data (School_data.json not found)");
         });
 }
 
