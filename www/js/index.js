@@ -18,12 +18,12 @@ function onDeviceReady() {
     loadLocalData();
 }
 
-// Load data from data.json
+// Load data from School data.json
 function loadLocalData() {
     showLoading(true);
     
     // Path is relative to your index.html file
-    fetch('School data.json')
+    fetch('School data.json')   // ← Updated filename
         .then(response => {
             if (!response.ok) {
                 throw new Error('HTTP error ' + response.status);
@@ -38,13 +38,13 @@ function loadLocalData() {
             showLoading(false);
         })
         .catch(error => {
-            console.error("Error loading data.json:", error);
+            console.error("Error loading School data.json:", error);
             // Use mock data if JSON file not found
             allSchools = getMockData();
             updateStats();
             filterAndRenderSchools();
             showLoading(false);
-            showError("Using demo data (data.json not found)");
+            showError("Using demo data (School data.json not found)");
         });
 }
 
